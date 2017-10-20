@@ -74,11 +74,16 @@ CheckBox showVelocity_CheckBox;
 CheckBox showDensity_CheckBox;
 Slider densityBrightness_Slider;
 
+void settings()
+{
+  size(SCREEN_WIDTH, SCREEN_HEIGHT);
+}
+
 
 void setup()
 {
-  size(SCREEN_WIDTH, SCREEN_HEIGHT);
-  frame.setTitle("Fluid Simulation - Antoine Fournier - 2014");
+  
+  surface.setTitle("Fluid Simulation - Antoine Fournier - 2014");
 
   mapSize           = 64;
   initWithDensity   = true;
@@ -339,7 +344,7 @@ void controlEvent(ControlEvent _e)
   // Slider
   if (_e.getController() == mapSize_Slider)
   {
-    mapSize = (int)mapSize_Slider.value();
+    mapSize = (int)mapSize_Slider.getValue();
     return;
   }
 
@@ -347,7 +352,7 @@ void controlEvent(ControlEvent _e)
   // Slider
   if (_e.getController() == diffusion_Slider)
   {
-    diffusion = diffusion_Slider.value();
+    diffusion = diffusion_Slider.getValue();
     if (fluidGrid != null)
       fluidGrid.setDiffusion(diffusion);
     return;
@@ -356,7 +361,7 @@ void controlEvent(ControlEvent _e)
   // Slider
   if (_e.getController() == fidelity_Slider)
   {
-    fidelity = (int)fidelity_Slider.value();
+    fidelity = (int)fidelity_Slider.getValue();
     if (fluidGrid != null)
       fluidGrid.setDiffusion(fidelity);
     return;
@@ -365,7 +370,7 @@ void controlEvent(ControlEvent _e)
   // Slider
   if (_e.getController() == densityBrightness_Slider)
   {
-    densityBrightness = (int)densityBrightness_Slider.value();
+    densityBrightness = (int)densityBrightness_Slider.getValue();
     if (visualizer != null)
       visualizer.setDensityBrightness(750 - densityBrightness);
     return;
@@ -374,8 +379,7 @@ void controlEvent(ControlEvent _e)
   // Slider
   if (_e.getController() == initialForcePower_Slider)
   {
-    initialForcePower = (int)initialForcePower_Slider.value();
+    initialForcePower = (int)initialForcePower_Slider.getValue();
     return;
   }
 }
-
