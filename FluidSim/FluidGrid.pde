@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2014 Fournier Antoine
+Copyright (c) 2014-2018 Fournier Antoine - https://github.com/antoinefournier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -401,4 +401,3 @@ class FluidGrid
     _x[mSizeGrid + 1][mSizeGrid + 1] = 0.5 * (_x[mSizeGrid][mSizeGrid + 1] + _x[mSizeGrid + 1][mSizeGrid]);
   }
 }
-

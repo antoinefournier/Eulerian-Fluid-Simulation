@@ -1,7 +1,7 @@
 /*
 The MIT License (MIT)
 
-Copyright (c) 2014 Fournier Antoine
+Copyright (c) 2014-2018 Fournier Antoine - https://github.com/antoinefournier
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -82,8 +82,7 @@ void settings()
 
 void setup()
 {
-  
-  surface.setTitle("Fluid Simulation - Antoine Fournier - 2014");
+  surface.setTitle("Fluid Simulation - Antoine Fournier - https://github.com/antoinefournier/Eulerian-Fluid-Simulation");
 
   mapSize           = 64;
   initWithDensity   = true;
@@ -110,7 +109,7 @@ void setup()
   // Reset button
   reset_Button = gui.addButton("Reset").setPosition(SCREEN_HEIGHT + 88, 50).setSize(80, 30);
   reset_Button.getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER);
-  reset_Button.setVisible(false);
+  reset_Button.hide();
 
 
 
@@ -228,12 +227,12 @@ void startSimulation()
 
   visualizer.setDensityBrightness(750 - densityBrightness);
 
-  reset_Button.setVisible(true);
-  start_Button.setVisible(false);
-  mapSize_Slider.setVisible(false);
-  fillMapWithDensity_CheckBox.setVisible(false);
-  initalForce_CheckBox.setVisible(false);
-  initialForcePower_Slider.setVisible(false);
+  reset_Button.show();
+  start_Button.hide();
+  mapSize_Slider.hide();
+  fillMapWithDensity_CheckBox.hide();
+  initalForce_CheckBox.hide();
+  initialForcePower_Slider.hide();
 }
 
 void endSimulation()
@@ -241,12 +240,12 @@ void endSimulation()
   fluidGrid = null;
   visualizer = null;
 
-  reset_Button.setVisible(false);
-  start_Button.setVisible(true);
-  mapSize_Slider.setVisible(true);
-  fillMapWithDensity_CheckBox.setVisible(true);
-  initalForce_CheckBox.setVisible(true);
-  initialForcePower_Slider.setVisible(true);
+  reset_Button.hide();
+  start_Button.show();
+  mapSize_Slider.show();
+  fillMapWithDensity_CheckBox.show();
+  initalForce_CheckBox.show();
+  initialForcePower_Slider.show();
 }
 
 void addForce()
